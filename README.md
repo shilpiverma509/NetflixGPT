@@ -14,7 +14,20 @@
   - Created redux store with user slice
   - Implemented Sign Out feature
   - Update Profile API call
-    -Build Movies fetch from TMDB
+  - BugFix Signup User and profile picture uodate
+  - handled redirects for authenticated and unauthenticated user
+  - Unsubscribed to the onAuthStateChanged callback
+  - Add hardcoded values to constant files
+  - Register for TMDB API & create an app and get access token
+  - Get data from TMDB now playing movies list API
+  - custom hook for nowPlaying movies
+  - created movies slice
+  - Updated the store with movies data
+  - Planning for main container and second container
+  - fetch data for trailor video
+  - Update the store with trailor video data
+  - Embedded the you tube video and auto play and mute
+  - added tailwind classes to make the main container look good
 
 #Features:
 

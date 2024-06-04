@@ -7,14 +7,13 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { MAIN_TRAILER, USER_AVATAR } from "../utils/constant";
 
 export const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const email = useRef(null);
@@ -47,7 +46,7 @@ export const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: "https://avatars.githubusercontent.com/u/19169876?v=4",
+            photoURL: USER_AVATAR,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -59,21 +58,12 @@ export const Login = () => {
                   photoURL: photoURL,
                 })
               );
-              // Profile updated!
-              navigate("/browse");
-              // ...
             })
             .catch((error) => {
               setErrorMessage(error.message);
             });
-
-          console.log("user", user);
-          navigate("/browse");
-
-          // ...
         })
         .catch((error) => {
-          console.log("error", error);
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(` ${errorCode}`, errorMessage);
@@ -88,16 +78,13 @@ export const Login = () => {
       )
         .then((userCredential) => {
           // Signed in
-          const user = userCredential.user;
-          console.log("signed in", user);
-          navigate("/browse");
+          //const user = userCredential.user;
           // ...
         })
         .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
+          /*    const errorCode = error.code;
+          const errorMessage = error.message; */
           setErrorMessage(`User not found`);
-          console.log("error", `${errorCode}-${errorMessage}`);
         });
     }
   };
@@ -105,10 +92,7 @@ export const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/dd4dfce3-1a39-4b1a-8e19-b7242da17e68/86742114-c001-4800-a127-c9c89ca7bbe4/IN-en-20240527-popsignuptwoweeks-perspective_alpha_website_small.jpg"
-          alt="trailer"
-        />
+        <img src={MAIN_TRAILER} alt="trailer" />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
