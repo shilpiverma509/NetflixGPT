@@ -30,9 +30,10 @@
   - Embedded the you tube video and auto play and mute
   - added tailwind classes to make the main container look good
   - build secondary component
-  - Movie List
-  - Movie Card
-  - Updated IMG CDN in the constant file.
+  - Browse Page with Movie List and Movie Card
+  - Updated IMG CDN in the constant file with TMDB ImageCDN url.
+  - UsePopularMovies Custom Hook
+  - GPT Search Feature
 
     #Features:
 
