@@ -6,7 +6,6 @@ import { addTrailorVideo } from "../utils/movieSlice";
 const VideoBackground = ({ movieId }) => {
   //fetch traior of video
   const trailorVideo = useSelector((store) => store.movies?.trailorVideo);
-  console.log("key", trailorVideo?.key);
   const dispatch = useDispatch();
   const getMovieTrailor = async () => {
     const url = `https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`;

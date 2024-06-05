@@ -5,6 +5,7 @@
 - routing
 - Login Form
 - Signup Form
+
   - Form validation
   - Useref hook
   - Firebase Setup
@@ -28,19 +29,23 @@
   - Update the store with trailor video data
   - Embedded the you tube video and auto play and mute
   - added tailwind classes to make the main container look good
+  - build secondary component
+  - Movie List
+  - Movie Card
+  - Updated IMG CDN in the constant file.
 
-#Features:
+    #Features:
 
 - Login/Sign Up
 - Sign In/Sign Up form
 - redirect to browse page
 - Browse Page (after authentication)
-  Header
-  Main Movie
-  Trailor in background
-  Title and Description
-  Movie Suggestions
-  Movie List \* N
-  NetflixGPT
-  Search Bar
-  Movie Suggestions
+- Header
+- Main Movie
+- Trailor in background
+- Title and Description
+- Movie Suggestions
+- Movie List \* N
+- NetflixGPT
+- Search Bar
+- Movie Suggestions
