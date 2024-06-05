@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { API_OPTIONS } from "../utils/constant";
 import { addNowPlaying } from "../utils/movieSlice";
@@ -16,7 +16,6 @@ const useNowPlayingMovies = () => {
   useEffect(() => {
     getNowPlaying();
   }, []);
-  return <div>useNowPlayingMovies</div>;
 };
 
 export default useNowPlayingMovies;
