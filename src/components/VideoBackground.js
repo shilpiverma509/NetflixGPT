@@ -1,26 +1,11 @@
-import React, { useEffect } from "react";
-import { API_OPTIONS } from "../utils/constant";
-import { useDispatch, useSelector } from "react-redux";
-import { addTrailorVideo } from "../utils/movieSlice";
+import React from "react";
+import useMovieTrailor from "../hooks/useMovieTrailor";
+import { useSelector } from "react-redux";
 
 const VideoBackground = ({ movieId }) => {
   //fetch traior of video
   const trailorVideo = useSelector((store) => store.movies?.trailorVideo);
-  const dispatch = useDispatch();
-  const getMovieTrailor = async () => {
-    const url = `https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`;
-    const data = await fetch(url, API_OPTIONS);
-    const json = await data.json();
-    const filterData = json.results.filter(
-      (result) => result.type === "Trailer"
-    );
-    const trailor = filterData.length > 0 ? filterData[0] : json.results[0];
-    dispatch(addTrailorVideo(trailor));
-  };
-
-  useEffect(() => {
-    getMovieTrailor();
-  }, []);
+  useMovieTrailor(movieId);
 
   return (
     <div className="w-screen">

@@ -11,6 +11,7 @@ import { changeLanguage } from "../utils/configSlice";
 export const Header = () => {
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
+  const { showGptSearch } = useSelector((store) => store.gptSearch);
 
   const dispatch = useDispatch();
   const handleSignOut = () => {
@@ -58,23 +59,25 @@ export const Header = () => {
       <img src={LOGO} alt="Netflix logo" className="w-32" />
       {user && (
         <div className="flex p-2">
-          <select
-            className="m-2 p-2 bg-gray-700 text-white"
-            onChange={handleLanguageChange}
-          >
-            {SUPPORTED_LANG.map((lang) => {
-              return (
-                <option key={lang.identifier} value={lang.identifier}>
-                  {lang.name}
-                </option>
-              );
-            })}
-          </select>
+          {showGptSearch && (
+            <select
+              className="m-2 p-2 bg-gray-700 text-white"
+              onChange={handleLanguageChange}
+            >
+              {SUPPORTED_LANG.map((lang) => {
+                return (
+                  <option key={lang.identifier} value={lang.identifier}>
+                    {lang.name}
+                  </option>
+                );
+              })}
+            </select>
+          )}
           <button
             onClick={handleGptSearch}
             className="opacity-80 py-2 px-2 m-2 mx-4 my-2 rounded-lg bg-purple-800 text-white"
           >
-            GPT Search
+            {showGptSearch ? "Home" : "GPT Search"}
           </button>
           <img src={user?.photoURL} alt="user" className="w-12 h-12" />
           <button onClick={handleSignOut} className="font-bold text-white">

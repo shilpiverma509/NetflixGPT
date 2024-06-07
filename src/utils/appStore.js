@@ -12,7 +12,7 @@ const appStore = configureStore({
     gptSearch: gptReducer,
     config: configReducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+  // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
 
 export default appStore;

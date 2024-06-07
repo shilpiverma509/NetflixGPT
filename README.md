@@ -34,6 +34,9 @@
   - Updated IMG CDN in the constant file with TMDB ImageCDN url.
   - UsePopularMovies Custom Hook
   - GPT Search Feature
+  - Constants for different languages
+  - MultiLingual Search Page
+  - Integrate GPT API's
 
     #Features:
 

@@ -22,15 +22,7 @@ export const Browse = () => {
           <MainContainer />
           <SecondaryContainer />
         </>
-      )}{" "}
-      {/*
-      Main Container 
-        - Video Player
-        - Video Title
-      Secondary Container
-        -Movie List * n
-          -cards * n
-          */}
+      )}
     </div>
   );
 };
